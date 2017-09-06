@@ -1,6 +1,8 @@
 # youtube-pauser
-A python script that plays/pauses youtube videos wherever you are
--------------------------------
+
+A python script that plays/pauses youtube videos wherever you are.
+
+------------
 
 ## Dependencies
 `python3` and `pip3` are required.  
