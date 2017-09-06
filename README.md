@@ -35,6 +35,8 @@ chmod u+x pauser.py
 bindsym $mod+m exec --no-startup-id path_to_pauser/pauser.py
 ```
 
+The play/pause works assuming that you have a single video playing in a single window in a separate workspace.
+
 ------------
 
 ## Configuration
