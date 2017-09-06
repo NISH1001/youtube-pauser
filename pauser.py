@@ -4,40 +4,20 @@
     Monolothic module to play/pause the youtube video in the browser
 """
 
-import os
-import subprocess
+import config_loader
 import time
+from sysutils import exe
 
-def exe(command):
-    """
-        Executes the given system command
-    """
-    command = command.strip()
-    c = command.split()
-    output, error = subprocess.Popen(c,
-            stdout = subprocess.PIPE,
-            stderr = subprocess.PIPE).communicate()
-    output = output.decode('utf-8').strip()
-    error = error.decode('utf-8').strip()
-    return (output, error)
+def play_pause():
+    config = config_loader.load_config("config.json")
+    #exe("xdotool search --name {} windowactivate".format(config['window_name']))
+    command_switch = "xdotool key --clearmodifiers Alt+{}".format(config['desktop_number'])
+    exe("xdotool key --clearmodifiers Alt+{}".format(config['desktop_number']))
+    time.sleep(0.1)
+    exe("xdotool key --clearmodifiers space")
 
 def main():
-    active_window_command = "xdotool getactivewindow"
-    active_window_id, error = exe(active_window_command)
-
-    active_window_name_command = "xdotool getwindowname {}" \
-                                    .format(int(active_window_id))
-    active_window_name, error = exe(active_window_name_command)
-    print(active_window_name)
-
-    with open("log", 'w') as f:
-        output = ""
-        exe("xdotool search --name YouTube windowactivate")
-        time.sleep(0.1)
-        exe("xdotool key --clearmodifier Alt+0")
-        time.sleep(0.1)
-        exe("xdotool key --clearmodifiers space")
-        f.write(active_window_name + output)
+    play_pause()
 
 if __name__ == "__main__":
     main()
