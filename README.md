@@ -34,3 +34,18 @@ bindsym $mod+m exec --no-startup-id path_to_pauser/pauser.py
 ```
 
 ------------
+
+## Configuration
+The configuration is loaded from `config.json`.
+```json
+{
+    "desktop_number" : 0,
+    "window_name" : "YouTube"
+}
+```
+
+The **desktop_number** is the desktop number for your window manager. For example, in **i3wm**, 0 means 10.
+
+------
+
+
