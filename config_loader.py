@@ -19,6 +19,7 @@ def get_default_config():
     data = {}
     data['desktop_number'] = 0
     data['window_name'] = "YouTube"
+    data['browser'] = "Chromium"
     return data
 
 def main():

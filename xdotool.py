@@ -44,6 +44,10 @@ def send_keys(*args):
     output, error = exe(command)
     return output
 
+def sleep(sec):
+    command = "xdotool sleep".format(sec)
+    output, error = exe(command)
+
 def main():
     pass
 
