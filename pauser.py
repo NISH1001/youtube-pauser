@@ -28,6 +28,7 @@ def swtich_windows():
         Switch all the windows
     """
     config = config_loader.load_config("config.json")
+    print(config)
     windows = xdotool.search_window_class(config['browser'])
     for window in windows:
         window_name = xdotool.get_window_name(window)
