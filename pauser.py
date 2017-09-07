@@ -5,7 +5,6 @@
 """
 
 import config_loader
-import time
 import xdotool
 
 def swtich_tabs(window, max_tab=50):
@@ -28,12 +27,13 @@ def swtich_windows():
         Switch all the windows
     """
     config = config_loader.load_config("config.json")
-    print(config)
+    original_window = xdotool.get_window_active()
     windows = xdotool.search_window_class(config['browser'])
     for window in windows:
         window_name = xdotool.get_window_name(window)
         xdotool.activate_window(window)
         swtich_tabs(window, max_tab=30)
+    xdotool.activate_window(original_window)
 
 def play_pause():
     swtich_windows()
