@@ -30,6 +30,8 @@ You can bind this script to any key in your OS. Make sure you have proper execut
 chmod u+x pauser.py
 ```
 
+When done after play/pause, just hit `esc` key to clear the key strokes from the tool.  
+
 ### In i3wm you can bind it as:
 ```bash
 bindsym $mod+m exec --no-startup-id path_to_pauser/pauser.py
