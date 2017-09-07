@@ -5,7 +5,8 @@ import os
 
 
 def load_config(filename="config.json"):
-    filename_abs = os.path.abspath(os.path.expanduser(filename))
+    path = os.path.dirname(os.path.abspath(__file__))
+    filename_abs = path + "/" + filename
     data = {}
     try:
         with open(filename_abs, 'r') as f:
